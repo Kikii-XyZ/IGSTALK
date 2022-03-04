@@ -19,7 +19,7 @@ async function igstalk(username) {
 		let $ = cheerio.load(res)
 		let userName = $('body').find(".wrapper").find("div[class='profile-header'] > div[class='content clearfix'] > div[class='profile-info'] > div[class='profile-name'] > h1[class='profile-name-top']" ).text()
 		let name = $('body').find(".wrapper").find("div[class='profile-header'] > div[class='content clearfix'] > div[class='profile-info'] > div[class='profile-name'] > h2[class='profile-name-bottom']" ).text()
-        let usrProfile = $('body').find(".wrapper").find("div[class='profile-header'] > div[class='content clearfix'] > div[class='profile-info'] > div[class='profile-avatar']").find('img').attr('src');
+                let usrProfile = $('body').find(".wrapper").find("div[class='profile-header'] > div[class='content clearfix'] > div[class='profile-info'] > div[class='profile-avatar']").find('img').attr('src');
 		let { document } = (new JSDOM(res)).window
 		let bio = document.querySelector("body > div.wrapper > div.profile-header > div > div.profile-description").innerHTML
 		let foll = document.querySelector("body > div.wrapper > div:nth-child(2) > div > div.content-title > span:nth-child(3) > span").innerHTML
